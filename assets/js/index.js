@@ -12,7 +12,7 @@ $("#update_user").submit(event => {
     })
 
     var request = {
-        "url" : `http://localhost:3000/api/users/${data.id}`,
+        "url" : `http://13.233.150.17:3000/api/users/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -30,7 +30,7 @@ if(window.location.pathname == '/') {
         var id = $(this).attr("data-rank")
         console.log(id)
         var request = {
-            "url" : `http://localhost:3000/api/users/${id}`,
+            "url" : `http://13.233.150.17:3000/api/users/${id}`,
             "method" : "DELETE"
         }
 

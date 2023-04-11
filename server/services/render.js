@@ -2,7 +2,7 @@ const axios = require('axios') // MY Understanding: Axios is used when server is
                                // While AJAX is used by server to handle the query that are made by client browser. 
 
 exports.homeRoutes = (req, res) => {
-    axios.get('http://localhost:3000/api/users')
+    axios.get('http://13.233.150.17:3000/api/users')
         .then(response => {
             res.render('index', {users: response.data})        
         })
@@ -16,7 +16,7 @@ exports.add_user = (req, res) => {
 }
 
 exports.update_user = (req, res) => {
-    axios.get('http://localhost:3000/api/users', {params: {id: req.query.id}})
+    axios.get('http://13.233.150.17:3000/api/users', {params: {id: req.query.id}})
         .then(userdata => {
             res.render('update_user', {user: userdata.data})
         })
@@ -25,7 +25,7 @@ exports.update_user = (req, res) => {
         })
 }
 exports.delete_user = (req, res) => {
-    axios.delete('http://localhost:3000/api/users', {params: {id: req.query.id}})
+    axios.delete('http://13.233.150.17:3000/api/users', {params: {id: req.query.id}})
         .then(userdata => {
             res.render('update_user', {user: userdata.data})
         })
