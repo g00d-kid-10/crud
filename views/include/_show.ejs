@@ -1,0 +1,17 @@
+<% for(var i=1; i<=users.length; i++) { %>
+    <tr <%if(i%2==0) { %> style="background-color: rgb(243, 247, 255);" <%}%> >
+        <td><%= i%></td>
+        <td><%= users[i-1].name%></td>
+        <td><%= users[i-1].email%></td>
+        <td><%= users[i-1].gender%></td>
+        <td><%= users[i-1].status%></td>
+        <td>
+            <a href="/update-user?id=<%= users[i-1]._id%>" class="btn border-shadow fill update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn border-shadow fill delete" data-rank="<%= users[i-1]._id%>" >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+<%}%>
